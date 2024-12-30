@@ -12,6 +12,7 @@
       Default: hsl(162, 100%, 40%)
       Orange: hsl(14, 100%, 65%) - Blue: hsl(210, 100%, 70%)
       Pink: hsl(356, 100%, 75%) - Purple: hsl(250, 100%, 75%)
+      Golden Yellow: hsl(54%, 100%, 48%) - Dark Gray: hsl(0, 100%, 100%)
 
       For more colors visit: https://colors.dopely.top/color-pedia
       -> Choose any color 
@@ -19,13 +20,15 @@
       -> Copy the color mode (HSL)
   */
 
-  --hue: 14;
-  --first-color: hsl(var(--hue), 100%, 65%);
+  --hue: 54;
+  --first-color: hsl(var(--hue), 100%, 48%);
   --first-color-alt: hsl(var(--hue), 56%, 35%);
   --title-color: hsl(228, 8%, 95%);
   --text-color: hsl(228, 8%, 65%);
+  --icon-color: hsl(0, 0%, 0%);
   --body-color: hsl(228, 15%, 20%);
   --container-color: hsl(228, 15%, 15%);
+  --main-color: hsl(0, 100%, 100%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -94,7 +97,10 @@ button {
   border: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
@@ -128,7 +134,7 @@ svg {
   padding-block: 5rem 2rem;
 }
 
-.section__title, 
+.section__title,
 .section__subtitle {
   text-align: center;
   color: var(--title-color);
@@ -150,7 +156,8 @@ svg {
 }
 
 .main {
-  overflow: hidden; /* For animation ScrollReveal */
+  overflow: hidden;
+  /* For animation ScrollReveal */
 }
 
 /*=============== HEADER & NAV ===============*/
@@ -179,7 +186,8 @@ svg {
   color: var(--first-color);
 }
 
-.nav__toggle, .nav__close {
+.nav__toggle,
+.nav__close {
   display: flex;
   font-size: 1.25rem;
   color: var(--title-color);
@@ -188,7 +196,7 @@ svg {
 
 /* Navigation for mobile devices */
 
-@media  screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .nav__menu {
     position: fixed;
     top: 0;
@@ -198,7 +206,8 @@ svg {
     height: 100%;
     padding: 4.5rem 0 0 3rem;
     backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);  /* For safari */
+    -webkit-backdrop-filter: blur(24px);
+    /* For safari */
     transition: right .4s;
   }
 }
@@ -245,7 +254,8 @@ svg {
   height: 100%;
   background-color: hsla(0, 0%, 10%, .3);
   backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px); /*For safari */
+  -webkit-backdrop-filter: blur(24px);
+  /*For safari */
   top: 0;
   left: 0;
   z-index: -1;
@@ -275,11 +285,13 @@ svg {
   text-align: center;
 }
 
-.home__subtittle, .home__education {
+.home__subtittle,
+.home__education {
   font-size: var(--bigger-font-size);
 }
 
-.home__subtittle span, .home__title {
+.home__subtittle span,
+.home__title {
   color: var(--first-color);
 }
 
@@ -302,7 +314,7 @@ svg {
   display: flex;
   background-color: var(--first-color);
   padding: .5rem;
-  color: var(--title-color);
+  color: var(--icon-color);
   font-size: 1.5rem;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: transform .4s;
@@ -324,7 +336,7 @@ svg {
 
 .home__img {
   width: 900px;
-  transform: translateX(-120px);
+  transform: translateX(-150px);
 }
 
 /*=============== BUTTON ===============*/
@@ -333,7 +345,7 @@ svg {
   background-color: var(--first-color);
   padding: 1rem 1.75rem;
   border-radius: .5rem;
-  color: var(--title-color);
+  color: var(--icon-color);
   font-weight: var(--font-medium);
   transition: box-shadow .4s;
 }
@@ -363,6 +375,11 @@ svg {
   width: 320px;
 }
 
+.about__img {
+  width: 900px;
+  transform: translateX(-150px);
+}
+
 .about__blob path {
   stroke: var(--first-color);
 }
@@ -385,7 +402,8 @@ svg {
   margin-bottom: 2rem;
 }
 
-.skills__content, .skills__group {
+.skills__content,
+.skills__group {
   display: grid;
 }
 
@@ -401,7 +419,7 @@ svg {
   list-style: decimal-leading-zero;
 }
 
-.skills__item{
+.skills__item {
   font-weight: var(--font-medium);
   color: var(--title-color);
 }
@@ -469,11 +487,12 @@ svg {
   bottom: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, 
-            hsla(0, 0%, 0%, 0)0%,
-            hsla(var(--hue), 70%, 40%, .8)120%);
+  background: linear-gradient(180deg,
+      hsla(0, 0%, 0%, 0)0%,
+      hsla(var(--hue), 70%, 40%, .8)120%);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /* For safari */
+  -webkit-backdrop-filter: blur(4px);
+  /* For safari */
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -482,7 +501,8 @@ svg {
   transition: bottom .4s;
 }
 
-.projects__subtitle, .projects__button {
+.projects__subtitle,
+.projects__button {
   color: var(--title-color);
   font-size: var(--small-font-size);
 }
@@ -518,7 +538,8 @@ svg {
   padding-top: 1rem;
 }
 
-.contact__form, .contact__group {
+.contact__form,
+.contact__group {
   display: grid;
   row-gap: 1rem;
 }
@@ -568,7 +589,7 @@ svg {
   text-align: center;
 }
 
-.footer__title{
+.footer__title {
   font-size: var(--h1-font-size);
   font-weight: var(--font-semi-bold);
   margin-bottom: .25rem;
@@ -663,13 +684,14 @@ svg {
   .services__card {
     padding-block: 1.5rem;
   }
-  
+
 }
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-  .home__container, 
-  .about__container, 
+
+  .home__container,
+  .about__container,
   .skills__container,
   .services__container,
   .projects__container,
@@ -677,36 +699,38 @@ svg {
     grid-template-columns: 360px;
     justify-content: center;
   }
-  
+
 }
 
 @media screen and (min-width: 768px) {
   .nav__menu {
     width: 55%;
   }
-  
+
 
   .home__container,
   .about__container,
-  .skills__container{
+  .skills__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
 
-  .home__data, 
+  .home__data,
   .about__data,
   .skills__data,
   :is(.about__data, .skills__data) :is(.section__subtitle, .section__title) {
     text-align: initial;
   }
 
-  .home__social{
+  .home__social {
     justify-content: initial;
   }
 
-  .home__blob, .about__blob {
+  .home__blob,
+  .about__blob {
     width: 400px;
   }
+
   .about__data {
     order: 1;
   }
@@ -716,6 +740,7 @@ svg {
     grid-template-columns: repeat(2, 352px);
   }
 }
+
 /* For large devices */
 @media screen and (min-width: 1023px) {
   .section {
@@ -730,7 +755,8 @@ svg {
     height: calc(var(--header-height) + 1.5rem);
   }
 
-  .nav__close, .nav__toggle {
+  .nav__close,
+  .nav__toggle {
     display: none;
   }
 
@@ -745,7 +771,8 @@ svg {
 
   .blur-header::after {
     backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px); /* For safari */
+    -webkit-backdrop-filter: blur(25px);
+    /* For safari */
   }
 }
 
@@ -764,7 +791,7 @@ svg {
     width: 500px;
   }
 
-  .home__content{
+  .home__content {
     row-gap: 4.5rem;
   }
 
@@ -772,7 +799,7 @@ svg {
     margin-block: 1.5rem 2.5rem;
   }
 
-  .home__social{
+  .home__social {
     column-gap: 1.5rem;
   }
 
@@ -782,7 +809,7 @@ svg {
     padding-bottom: 1rem;
   }
 
-  .about__blob{
+  .about__blob {
     width: 500px;
   }
 
@@ -799,12 +826,15 @@ svg {
   .skills__description {
     margin-bottom: 3rem;
   }
+
   .skills__content {
     column-gap: 8rem;
   }
+
   .skills__group {
     row-gap: 1.5rem;
   }
+
   .skills__item {
     font-size: var(--h3-font-size);
   }
@@ -813,6 +843,7 @@ svg {
     grid-template-columns: repeat(3, 352px);
     padding-block: 2.5rem 4rem;
   }
+
   .services__card {
     padding: 3.5rem 2rem;
   }
@@ -822,6 +853,7 @@ svg {
     row-gap: 3rem;
     padding-block: 2.5rem 4rem;
   }
+
   .projects__button {
     font-size: var(--normal-font-size);
   }
@@ -830,16 +862,20 @@ svg {
     grid-template-columns: 680px;
     padding-block: 2.5rem 2rem;
   }
+
   .contact__form {
     row-gap: 1.5rem;
   }
+
   .contact__group {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
   }
+
   .contact__input {
     padding: 1.5rem;
   }
+
   .contact__form textarea {
     height: 20rem;
   }
@@ -847,17 +883,21 @@ svg {
   .footer {
     padding-block: 4.5rem 4rem;
   }
+
   .footer__container {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     text-align: initial;
   }
+
   .footer__title {
     font-size: var(--bigger-font-size);
   }
-  .footer__social{
+
+  .footer__social {
     column-gap: 1.5rem;
   }
+
   .footer__copy {
     margin: 0;
     justify-self: flex-end;
